@@ -1,0 +1,18 @@
+c       coords.fi
+c       Electronic and vibrational coordinates
+c       
+c       qc and qcaux store the diagonal of the reduced (electronic) density
+c       matrix, which have the meaning of eigenstate populations
+c       cc and ccaux store the "nuclear" coordinates, i.e. the deviations of
+c       the local harmonic oscillators from equilibrium
+c       
+	real(kind(1D0)) cc, qc, ccaux, qcaux, qcav
+	integer iord
+	real(kind(1.0d0))thop,distmat,coords,tbond1,tbond2
+	common /coords/ qc(NQMAX*2),qcaux(NQMAX*2),qcav(NQMAX*2),
+	1    cc(NCMAX),ccaux(NCMAX), iord(NQMAX*2)
+c       
+	
+	common/geometry/ thop(nsmax,nsmax),distmat(nsmax,nsmax), coords(nsmax,2),tbond1(nsmax,nsmax),tbond2(nsmax,nsmax)
+	
+	

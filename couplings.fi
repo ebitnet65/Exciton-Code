@@ -1,0 +1,20 @@
+c couplings.fi
+c
+	real(kind(1D0)) Gkk, hder
+	integer ider, jder, nder
+c       
+c       Gkk - diagonal of the electron-phonon coupling matrix,
+c       i.e., Gkk(ksi, i) - coupling between mode ksi and eigenstate i.
+c       Gkk(ksi,i) also determines indirectly the displacement of 
+c       (the adiabatic minima of) the eigenstate i from ground-state 
+c       equilibrium in vibrational mode ksi.
+c       hder, ider, jder are support arrays.
+c       Essentially, hder(ksi, i) is the el-ph coupling between normal 
+c       mode ksi and the element H(ider(i),jder(i)) of the electronic 
+c       Hamiltonian in site representation.
+c       
+	common /couplings/ Gkk(NCMAX,NQMAX*2)            
+	1    , hder(NCMAX,3*NQMAX)
+	2    , ider(3*NQMAX), jder(3*NQMAX)
+	3    , nder
+c

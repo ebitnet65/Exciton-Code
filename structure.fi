@@ -1,0 +1,26 @@
+c	structure.fi
+c	Describes a monomer
+c
+c	x - position, 
+c	eelec - antibonding orbital level,
+c	ehole - bonding orbital level.
+c	tdipole and chain are for interchain interaction treatment.
+c
+c      structure /site/
+c         real(kind(1D0)) x(3), tdipole(3), eelec, ehole
+c         integer chain
+c      end structure
+      
+c      record /site/ sites(NSMAX)
+c     
+c      common /structur/ sites 
+       
+
+       real(kind(1d0))x(3,NSMAX)
+       real(kind(1d0))tdipole(3,NSMAX)
+       real(kind(1d0))eelec(NSMAX)
+       real(kind(1d0))ehole(NSMAX)
+       common/struct1/eelec
+       common/struct2/ehole
+       common/struct3/tdipole
+       common/struct4/x

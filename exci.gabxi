@@ -1,0 +1,4 @@
+ ## Diabatic coupling constants g(a,b,xi) 
+ #  note that g is dimensionalless
+ #  gab = hder(kx,i)/sqrt(2*qomega(kx)**3*Hbar)
+    a    b   xi        w_xi           g

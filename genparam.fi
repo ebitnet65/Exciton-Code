@@ -1,0 +1,29 @@
+c	genparam.fi
+c	s* - stores start date and time parameters
+c	e* - stores end date and time parameters
+c	j* - stores job date and time parameters
+c       
+	integer, parameter :: JAN = 1
+	integer, parameter :: FEB = 2
+	integer, parameter :: MAR = 3
+	integer, parameter :: APR = 4
+	integer, parameter :: MAY = 5
+	integer, parameter :: JUN = 6
+	integer, parameter :: JUL = 7
+	integer, parameter :: AUG = 8
+	integer, parameter :: SEP = 9
+	integer, parameter :: OCT = 10
+	integer, parameter :: NOV = 11
+	integer, parameter :: DEC = 12
+	
+	character*12
+	1   sdat, stim, szon,
+	2   edat, etim, ezon
+	integer
+	1   sdt, edt, jdt
+c       
+	common /genparam/
+	1   sdat, stim, szon,
+	2   edat, etim, ezon,
+	3   sdt(8), edt(8), jdt(8)
+c       

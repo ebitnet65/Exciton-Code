@@ -1,0 +1,36 @@
+c	sizes.fi
+c     Defines the sample size/polymer chain length and other parameters
+c     specific to the sample
+c     
+c     Contains the array sizes.
+c     NSMAX - maximum number of sites/monomers
+c     NCMAX - maximum number of vibrational degrees of freedom
+c     NQMAX - maximum number of monoexcited configurations (quantum states)
+c     NQMAX2 - 
+c     NTIMEMAX -
+c     NSPECMAX - maximum spectral resolution
+c     NRESMAX -
+c     OLDVERSION -
+      integer, parameter :: NSMAX=50, NCMAX=NSMAX+NSMAX
+      integer, parameter :: NQMAX=NSMAX*NSMAX+1
+      integer, parameter :: NQMAX2=int(NQMAX*(NQMAX+1)/2)
+      integer, parameter :: NTIMEMAX=100
+      integer, parameter :: NSPECMAX=400 
+      integer, parameter :: NRESMAX=100
+      logical, parameter :: OLDVERSION=.false. 
+c     
+      integer nsites, ncdof, nqdof, ispinstate, mcyclic, nqexc, nqvars
+      real(kind(1D0)) work
+      common /dimensions/ nsites, ncdof, nqdof, ispinstate, mcyclic
+     *     ,nqexc, nqvars
+      common /work/ work(NQMAX,NQMAX) 
+c     
+c     nsites - number of monomers
+c     ncdof - number of vibrational degrees of freedom (nsites or nsites*2)
+c     nqdof - number of monoexcited configurations = nsites^2
+c     ispinstate - determines the relevant spin-state: 
+c     0 - singlet, 1 - triplet, -1 - both
+c     mcyclic - reserved for future use - cyclic boundary conditions
+c     nqexc - number of excited levels (= nqdof or nqdof*2)
+c     nqvars - no. of electronic degrees of freedom, including S0 (=nqexc+1)
+c

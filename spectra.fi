@@ -1,0 +1,15 @@
+c	spectra.fi
+c	spectrum - stores time-dependent spectral distributions
+c	xtime - time of a recorded distribution
+c	eleft - eright is the spectral range
+c	ntime -
+c	nspec -
+c`	ctitle -
+c		real(kind(1D0))
+c			sitecharge(NSMAX,NTIMEMAX), 
+c			siteexc(NSMAX,NTIMEMAX),
+	real(kind(1D0)) spectrum(NSPECMAX,NTIMEMAX)
+	real(kind(1D0)) xtime(NTIMEMAX), eleft, eright
+	character*10 ctitle(NTIMEMAX)
+	integer ntime, nspec
+	common /spectra/spectrum, xtime, eleft, eright, ntime, nspec, ctitle
